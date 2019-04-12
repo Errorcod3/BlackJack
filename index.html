@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blackjack</title>
+  <style media="screen">
+    /* CSS HERE */
+  </style>
+  </head>
+  <body>
+    <div class="table">
+
+      <div class="king dealer" value="10" id="king">King</div>
+
+      <div class="selectedPlayer player" value="playerName" id="player">playerName</div>
+
+    </div>
+    <script>
+      // JAVASCRIPT HERE
+        var startDeck = [];
+        var playerDeck = [];
+        var dealerDeck = [];
+        var currentPlayer = "dealer";
+        //Deck Builder
+        function buildDeck(){
+          var deck = [];
+          this.names = ['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king'];
+          this.values = [1,2,3,4,5,6,7,8,9,10,10,10,10];
+          this.suits = ['Hearts','Diamonds','Spades','Clubs'];
+          this.decks = ['1','2','3','4','5','6']
+          for(var d =0; d < this.decks.length; d++){
+            for(var s = 0; s < this.suits.length; s++){
+              for(var n = 0; n < this.names.length; n++){
+                var card = {Name: names[n], Values: values[n], Suit: suits[s]};
+                deck.push(card);
+              }}}
+          startDeck = deck;
+          return startDeck;}
+
+        // Boolean function to highlight currentPlayer, and skip turns if "Stand" is offered
+        // assigns currentPlayer's ID to the var currentPlayer
+        function switchTurns(){
+          // Insert switch functional here
+          }
+          if () {
+            //player or dealer cards = 21 BLACKJACK!
+          }
+          // playerTurn
+          else if(){
+            //Less than 17 hit, otherwise stand
+          }
+          //dealerTurn
+          else if () {
+            //await player action
+          }
+          else{
+
+          }
+        }
+
+        //Choosing and remove random card from deck
+        function drawCard() {
+          var randomCard = 0;
+          randomCard = Math.floor(Math.random() * startDeck.length);
+          console.log(randomCard);
+          var chosenCard = startDeck[randomCard];
+          startDeck.splice(randomCard,1);
+            if (currentPlayer == "dealer"){ //Pushing the chosenCard (entire object) to the currentPlayer's array
+              dealerDeck.push(chosenCard);
+            }
+            else (currentPlayer == "player"){
+              playerDeck.push(chosenCard);
+            }}
+
+        // Enable Player buttons when player turn
+
+        // Dealer hit or stand
+
+
+    </script>
+  </body>
+</html>
