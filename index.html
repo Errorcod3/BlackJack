@@ -17,10 +17,17 @@
     </div>
     <script>
       // JAVASCRIPT HERE
+
+        //Global Variables
         var startDeck = [];
         var playerDeck = [];
         var dealerDeck = [];
-        var currentPlayer = "dealer";
+        var currentPlayer = "firstTurn";
+        var playerButtons = ["stand","hit","quit"];
+
+        //SplashScreen confirm player name & startGame
+
+
         //Deck Builder
         function buildDeck(){
           var deck = [];
@@ -37,26 +44,54 @@
           startDeck = deck;
           return startDeck;}
 
-        // Boolean function to highlight currentPlayer, and skip turns if "Stand" is offered
-        // assigns currentPlayer's ID to the var currentPlayer
-        function switchTurns(){
-          // Insert switch functional here
-          }
-          if () {
-            //player or dealer cards = 21 BLACKJACK!
-          }
-          // playerTurn
-          else if(){
-            //Less than 17 hit, otherwise stand
-          }
-          //dealerTurn
-          else if () {
-            //await player action
-          }
-          else{
 
+          //Starts game, and deals starting Hand
+          function startGame(){
+            if(currentPlayer == "firstTurn"){
+              currentPlayer = "player";
+              drawCard();
+              currentPlayer = "dealer";
+              drawCard();
+              currentPlayer = "player";
+              drawCard();
+              currentPlayer = "dealer";
+              drawCard();
+            }
+            else if (playerTotal == "21"){
+              console.log("youwin");
+            }
+            else if (dealerTotal == "21"){
+              console.log("youlose");
+            }
+            else if (currentPlayer == "player"){
+              playerTurn();
+            }
+            else{
+              return
+            }
           }
-        }
+
+        //WORKING
+        // Checks if any hand contains value of 21
+        //   then(function(){
+        //     if(playerValues == 21){
+        //       console.log("youwin");
+        //     }
+        //     else if(dealerValues == 21){
+        //       console.log("dealerwin")
+        //     }
+        //     else if(dealerValue > 17){
+        //         nextTurn();
+        //       }
+        //     else{
+        //         playerTurn = "dealer";
+        //         drawCard();
+        //         playerTurn = "player";
+        //         nextTurn();
+        //       }
+        //     }
+        //   })
+
 
         //Choosing and remove random card from deck
         function drawCard() {
@@ -68,13 +103,16 @@
             if (currentPlayer == "dealer"){ //Pushing the chosenCard (entire object) to the currentPlayer's array
               dealerDeck.push(chosenCard);
             }
-            else (currentPlayer == "player"){
+            else if (currentPlayer == "player"){
               playerDeck.push(chosenCard);
             }}
 
-        // Enable Player buttons when player turn
 
-        // Dealer hit or stand
+        //WORKING
+        // Enable Player buttons when player turn
+        // function nextTurn(){
+        //
+        // }
 
 
     </script>
